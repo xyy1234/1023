@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<style>
+    .red{
+        background: red;
+    }
+    .green{
+        background:green;
+    }
+    li{
+        width: 70px;
+        height: 20px;
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+<div id="app">
+
+    <ul>
+        <li v-for="obj in arr"  :class="{red:obj.active, green:!obj.active}" @click="change" >{{obj.name}},{{obj.price}}</li>
+    </ul>
+<hr/>
+    {{total()}}
+</div>
+<script src="vue.js"></script>
+<script>
+     new Vue({
+         el:"#app",
+         data:{
+             arr:[
+                 {name:"aaa",price:234,active:"false"},
+                 {name:"bbb",price:567,active:"false"},
+                 {name:"ccc",price:734,active:"false"},
+                 {name:"ddd",price:894,active:"false"},
+                 {name:"eee",price:634,active:"false"}
+             ]
+         },
+         methods:{
+             change:function(obj){
+                 obj.active=!obj.active;
+
+             },
+total:function(){
+    var totalPrice=0;
+    for(var i=0;i<this.arr.length;i++){
+        if(this.arr[i].active){
+            totalPrice += this.arr[i].price;
+        }
+    }
+    return totalPrice;
+}
+         }
+     })
+</script>
+
+</body>
+</html>
