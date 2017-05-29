@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+}
+.wrapper{
+    padding: 0 66px;
+    margin:0 auto;
+    max-width:980px;
+
+}
+#adv{
+    height: 40px;
+    background: #444;
+    color:#a8a8aa;
+    line-height: 40px;
+
+}
+#nav{
+background:rgba(0,0,0,0.8);
+height: 44px;
+}
