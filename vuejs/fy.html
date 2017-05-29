@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="add">
+    <input type="text" v-model="text1">
+    <input type="text" v-model="text2">
+    <button @click="add">add</button>
+    <ul>
+        <li v-for="(val,index) in list)">{{index+1}},{{val}}<button @click="del">del</button></li>
+    </ul>
+</div>
+<!--<ul><li><button @click="delate">delate</button></li>-->
+    <script src="vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#add',
+        data:{
+         text1:"",
+                text2:""  ,
+                list:[]
+
+
+        },
+        methods:{
+            add:function(){
+              this.list.push(this.text1+this.text2);
+                this.text1='';
+                this.text2='';
+
+
+            }
+        }
+    })
+</script>
+</body>
+</html>
